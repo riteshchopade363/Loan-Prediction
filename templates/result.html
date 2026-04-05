@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Result</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: #fff;
+            padding: 40px;
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.3);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .approved {
+            color: green;
+        }
+
+        .rejected {
+            color: red;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #667eea;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="card">
+
+        {% if lone_value == "No" %}
+            <div class="icon approved">✔</div>
+            <h1 class="Yes">Loan Approved</h1>
+            <p>Congratulations! Your loan has been approved successfully.</p>
+
+        {% else %}
+            <div class="Yes">✖</div>
+            <h1 class="Yes">Loan Rejected</h1>
+            <p>Sorry, your loan application was not approved.</p>
+        {% endif %}
+
+        <form action="/">
+            <button class="btn">Apply Again</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
